@@ -1,21 +1,20 @@
-//Menu System
+//============ Menu System ============
 
-//define buttonL and buttonR
+//place holder variables
+int buttonLpressed = 0;
+int buttonRpressed = 0;
 
-//Selection Functions
+int variableSelect = 0;
+//0 = wave select
+//1 = reverb
+//2 = chorus
+//3 = filter
 
 int lrCounter = 0;
+//pressing the left or right buttons adds/subtracts to this value resp
 
-/*
 void lrSelection()
-    {
-        if((buttonL || buttonR) == 1)
-        {
-            lrCounter = lrCounter++;
-            //sleep for 200ms
-        }
-        //loop forever
-    }
-*/
-
-// Hello, this is a test
+{
+    //will run the left or right button is pressed
+    //lrCounter increment will happen in an interrupt 
+}
