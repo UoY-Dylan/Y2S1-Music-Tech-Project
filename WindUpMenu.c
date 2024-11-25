@@ -6,6 +6,7 @@
 
 int lrCounter = 0;
 
+/*
 void lrSelection()
     {
         if((buttonL || buttonR) == 1)
@@ -15,3 +16,6 @@ void lrSelection()
         }
         //loop forever
     }
+*/
+
+// Hello, this is a test
