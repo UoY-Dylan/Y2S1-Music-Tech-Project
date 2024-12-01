@@ -1,4 +1,6 @@
-#
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 //========== HARDWARE DECLARATIONS ==========
 
@@ -17,21 +19,29 @@ int currentVariable = 0;
 //1 = reverb
 //2 = chorus
 //3 = filter
-int menuLocation[2] = {0, 0}; //stores the value with wrapping 
+int menuLocation[2] = {0, 0}; 
+//[0] layer: constrined to 0-1
+//[1] select: constrained to 0-4
+//stores the value with wrapping 
 
-//holds the value of each variable
-int selectWave = 0;
-int selectReverb = 0;
-int selectChorus = 0;
-int selectFilter = 0;
+int variableValue[4] = {0, 0, 0, 0}; //counters for each variable
+//wave, reverb, chorus, filter
 
-int variableValue[4] = {0, 0, 0, 0}; //stores the value with wrapping 
-//[0] = wave select: sin, tri, sqr
+int variableValueWrap[4] = {0, 0, 0, 0}; //stores the value with wrapping 
+//[0] = wave select: sin, tri, sqr, saw
 //[1] = reverb: on, off
 //[2] = chorus: on, off
 //[3] = filter: on, off
 
-char variableToStrings[] 
+char locationToString[4] = {"Wave Select", "Reverb", "Chorus", "Filter"};
+
+char variableToString[4][4] = 
+{
+    {"Sine", "Triangle", "Square", "Saw"}, //wave
+    {"ON", "OFF", "ON", "OFF"}, //reverb
+    {"ON", "OFF", "ON", "OFF"}, //chorus
+    {"ON", "OFF", "ON", "OFF"} //filter
+};
 
 //========== FUNCTIONS ==========
 
@@ -50,29 +60,21 @@ void lrSelection(int offset)
     {
         currentVariable = currentVariable+offset;
         menuLocation[1] = abs(currentVariable)%4;
+
+        displayLCD(locationToString[menuLocation[2]]);
     }
 
     else if(menuLocation[0] == 1) //select layer
     {
-        switch(menuLocation[1])
-        {
-            case 0: // wave select
-                selectWave = selectWave+offset;
-                variableValue[0] = abs(selectWave)%
+        variableValue[menuLocation[1]] = variableValue[menuLocation[1]]+offset;
+        variableValueWrap[menuLocation[1]] = abs()%4;
 
-            break;
-
-            case 1: // reverb
-
-            break;
-
-            case 2: // chorus
-
-            break;
-
-            case 3: // filter
-
-            break;
-        }
+        displayLCD(variableToString[menuLocation[1]][variableValueWrap[menuLocation[1]]]);
     }
+}
+
+void udSelection()
+{
+    //runs whenever a up or down button is pressed 
+    menuLocation[0] = !menuLocation[0];
 }
