@@ -47,7 +47,7 @@ char variableToString[4][4] =
 
 void displayLCD(char *str inputString)
 {
-    print(inputString);
+    printf(inputString);
 }
 
 
