@@ -65,9 +65,11 @@ void lrSelection(int offset)
     }
 
     else if(menuLocation[0] == 1) //select layer
-    {
-        variableValue[menuLocation[1]] = variableValue[menuLocation[1]]+offset;
-        variableValueWrap[menuLocation[1]] = abs()%4;
+    {   
+        int currentLayer = variableValue[menuLocation[1]];
+
+        currentLayer = currentLayer+offset;
+        variableValueWrap[menuLocation[1]] = abs(currentLayer)%4;
 
         displayLCD(variableToString[menuLocation[1]][variableValueWrap[menuLocation[1]]]);
     }

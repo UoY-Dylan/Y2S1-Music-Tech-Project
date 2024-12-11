@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 //========== HARDWARE DECLARATIONS ==========
 
 int rowX = 0;
@@ -18,6 +19,8 @@ float calculate12TET(int semitone)
     //calculates the note x semitones up from the lowC
     return lowC*(2^((semitone/12)))
 }
+
+
 
 // ===== MATRIX ARRAY =====
 
