@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "Y2S1-Music-Tech-Project",
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"stdlib.h": "c",
+			"string.h": "c"
+		},
+		"makefile.makefilePath": "D:\\UniStuff\\Assessments\\Y2S1\\Code\\Y2S1-Music-Tech-Project\\Y2S1_MusTech_MAKEFILE"
+	}
+}
