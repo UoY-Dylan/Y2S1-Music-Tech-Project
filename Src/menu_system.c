@@ -59,7 +59,7 @@ void lrSelection(int offset)
     if(menuLocation[0] == 0) //variable layer
     {
         currentVariable = currentVariable+offset;
-        menuLocation[1] = abs(currentVariable)%4;
+        menuLocation[1] = abs(currentVariable)%4; //wraps currentVariable from 0-3
 
         displayLCD(locationToString[menuLocation[2]]);
     }
@@ -69,7 +69,7 @@ void lrSelection(int offset)
         int currentLayer = variableValue[menuLocation[1]];
 
         currentLayer = currentLayer+offset;
-        variableValueWrap[menuLocation[1]] = abs(currentLayer)%4;
+        variableValueWrap[menuLocation[1]] = abs(currentLayer)%4; //wraps currentLayer from 0-3
 
         displayLCD(variableToString[menuLocation[1]][variableValueWrap[menuLocation[1]]]);
     }
